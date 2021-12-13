@@ -1,22 +1,24 @@
+# Dec 13, 2021: 'The Matrix Resurrections' and 'Spider Man: No Way Home' are coming out
 import tkinter as tk
 from tkinter import ttk
 
+
 def main(title):
-    '''
+    """
     target: 3 label (red: +1 /counter/blue: stop counter)
-    '''
+    """
 
     def if_finish():
         print(count, end=',')
         if count % 100 == 0:
             import tkinter.messagebox as mb
-            title = "You WIN!"
+            tittle = "You WIN!"
             massage = "Congratulations!"
-            mb.showwarning(title, massage)
+            mb.showwarning(tittle, massage)
             window.destroy()
 
     def add_one():
-        '''red button global_count add 3'''
+        """red button global_count add 3"""
         update_global_value(3)
         try:
             if_finish()
@@ -24,14 +26,14 @@ def main(title):
             print(f'Window is closed: {ex}')
 
     def stop_add():
-        '''red button is freeze and global_count add -7'''
+        """red button is freeze and global_count add -7."""
         update_global_value(-7)
         status = 'disabled' if Red['state'] == 'normal' else 'normal'
         Red['state'] = status
 
     def update_global_value(value):
         global count
-        count = count + (value)
+        count = count + value
         update_progress_bar()
         And['text'] = f'{count}'
 
@@ -56,7 +58,7 @@ def main(title):
     Red.grid(row=0, column=1, sticky='NSEW')
     Blue.grid(row=0, column=3)
     And.grid(row=0, column=2)
-    bar.grid(row=1, column=0, columnspan=4, sticky='NEW')
+    bar.grid(row=1, column=0, columnspan=4, sticky='EW')
 
     return window
 
