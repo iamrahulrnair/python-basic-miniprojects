@@ -1,4 +1,3 @@
-# Dec 13, 2021: 'The Matrix Resurrections' and 'Spider Man: No Way Home' are coming out
 import tkinter as tk
 from tkinter import ttk
 
