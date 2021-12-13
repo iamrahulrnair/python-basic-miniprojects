@@ -11,18 +11,22 @@ def main(title):
         print(count)
         And['text'] = f'{count}'
 
+    def stop_add():
+        status = 'disabled' if Red['state'] == 'normal' else 'normal'
+        Red['state'] = status
+
     window = tk.Tk()
 
-    window.geometry(f'250x100+800+450')
+    window.geometry(f'250x101+800+450')
     window.resizable(False, False)
     window.title(title)
     window.grid()
 
-    Red = tk.Button(window, text='RED', bg='red', command=add_one)
-    And = tk.Label(window, text=f'{count}', bg='white')
-    Blue = tk.Button(window, text='BLUE', bg='blue',  command=add_one)
+    Red = tk.Button(window, text='RED', bg='red', height = 6, width = 11, command=add_one)
+    And = tk.Label(window, text=f'{count}', bg='white', height = 6, width = 10)
+    Blue = tk.Button(window, text='BLUE', bg='#1E90FF',  height = 6, width = 11, command=stop_add)
 
-    Red.grid(row=0, column=0)
+    Red.grid(row=0, column=0, sticky='NSEW')
     Blue.grid(row=0, column=3)
     And.grid(row=0, column=2)
 
