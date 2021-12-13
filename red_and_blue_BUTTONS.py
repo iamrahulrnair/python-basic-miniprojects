@@ -7,7 +7,7 @@ def main(title):
     '''
 
     def if_finish():
-        print(count)
+        print(count, end=',')
         if count == 100:
             import tkinter.messagebox as mb
             title = "You WIN!"
@@ -16,17 +16,19 @@ def main(title):
             window.destroy()
 
     def add_one():
+        '''red button add 3'''
         global count
-        count = count + 1
-        if_finish()
+        count = count + 3
         try:
             And['text'] = f'{count}'
+            if_finish()
         except BaseException as ex:
             print(f'Window is closed: {ex}')
 
     def stop_add():
+        '''red button is freeze and global_count add -7'''
         global count
-        count = count - 2
+        count = count + (-7)
         status = 'disabled' if Red['state'] == 'normal' else 'normal'
         Red['state'] = status
 
